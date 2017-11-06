@@ -1,0 +1,177 @@
+ <!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>Analitička geometrija</title>
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+<body>
+ <ul class="w3-navbar w3-indigo">
+  <li><a href="http://matkos.in.rs/matematika/">Kabinet</a></li>
+  <li><a href="#duzi">Duži</a></li>
+  <li><a href="#trougao">Trougao</a></li>
+  <li><a href="http://matkos.in.rs/matematika/koordinateVektora.html">Vektori</a></li>
+  
+</ul>
+
+<div class="w3-container w3-border w3-pale-blue w3-row w3-border w3-center ">
+<h1 class="w3-center w3-animate-top">Analitička geometrija!</h1>
+
+	
+ <div ng-app="myApp" ng-controller="kontroler" ng-init="x1=0;y1=0 ;x2=0;y2=0;x31=0;y31=0 ;x32=0;y32=0;x33=0;y33=0;
+ x41=0;y41=0;x42=0;y42=0;x51=0;y51=0;z51=0;x61=1;y61=1;z61=1;x71=0;y71=0;z71=0;x72=0;y72=0;z72=0;x81=0;y81=0;z81=0;x82=0;y82=0;z82=0;x83=0;y83=0;z83=0;">
+ 
+ <h3 class="w3-indigo w3-padding-4 w3-margin w3-card-8  ">Duži</h3>
+	<div class="w3-padding-4 w3-margin w3-card-4 w3-light-blue" id="duzi">
+		<header class="w3-container w3-blue">
+		<h4>Izračunavanje odstojanja između tačaka A(x1,y1) i B(x2,y2)</h4>
+		</header>
+		
+		<p>Unesi koordinate tacke A(x1,y1)</p>
+		x1: <input type="number" ng-model="x1">
+		y1:    <input type="number" ng-model="y1">
+		<p>A (<span ng-bind="x1"></span>,<span ng-bind="y1"></span>)</p>
+		<p>Unesi koordinate tacke B(x2,y2)</p>
+		x2: <input type="number" ng-model="x2">
+		y2:    <input type="number" ng-model="y2">
+		<p>B (<span ng-bind="x2"></span>,<span ng-bind="y2"></span>)</p>
+		<footer class="w3-container w3-blue">
+		<h4>d(A,B) =&radic;<span style="text-decoration: overline;"> ( x2 - x1)&sup2; + ( y2 - y1 )</span>
+		= &radic;<span style="text-decoration: overline;"> ( {{ x2 }} - {{ x1f() }} )&sup2+( {{ y2}} - {{y1f() }} )&sup2</span>=
+		{{ Math.sqrt((x2 - x1)*(x2 - x1)+(y2 - y1)*(y2 - y1)) }}</h4>
+		</footer>
+	</div>
+	
+	<div class="w3-padding-4 w3-margin w3-card-4 w3-light-blue ">
+		<header class="w3-container w3-blue">
+		<h4>Središte duži  A(x1,y1) B(x2,y2)</h4>
+		</header>
+		
+		<p>Unesi koordinate tacke A(x1,y1)</p>
+		x1: <input  type="number" ng-model="x41"><br>
+		y1:    <input type="number" ng-model="y41"><br> 
+	
+		<p>A (<span ng-bind="x41"></span>,<span ng-bind="y41"></span>)</p>
+
+		<p>Unesi koordinate tacke B(x2,y2)</p>
+		x2: <input type="number" ng-model="x42"><br>
+		y2:    <input type="number" ng-model="y42"><br> 
+		
+		<p>B (<span ng-bind="x42"></span>,<span ng-bind="y42"></span>)</p>
+		<footer class="w3-container w3-blue">
+		<h4>Središte je u tački A1( (x1 + x2)/2 , (y1 + y2)/2 )= A1( ( {{x42}} + {{ x41f()}} )/2 , ( {{ y42}} + {{y41f()}} )/2  )= 
+		A1 ( {{( x42 + x41)/2 }} , {{ ( y42 + y41)/2  }} )</h4>
+		</footer>
+	</div>
+	
+<h3 class="w3-indigo w3-padding-4 w3-margin w3-card-8  ">Trougao</h3>
+
+	<div class="w3-padding-4 w3-margin w3-card-4 w3-light-blue  " id="trougao">
+		<header class="w3-container w3-blue">
+		
+		<h5>Težište trougla čija su temena A( x1, y1 ), B( x2, y2 ) i C( x3, y3 )</h5>
+		</header>
+		<h5>Težišna duž</h5>
+		<img src="slike/trougaoSlike/tezisnaDuz.png" class="w3-border w3-round w3-paddingclass="w3-image" " alt="teziste"style="width:50%" > 
+		<br><br>
+		  
+
+
+
+		<p><b>Težište trougla je presek težišnih duži.</b><br> <i>Detaljni tok konstrukcije pogledajte na Youtube</i><br>
+		<a href="https://youtu.be/J6wuD07CYx0" target="_blank"> <img src="slike/youtube2.png" alt="youtube style="width:10%""></a></p>
+		
+ <img src="slike/trougaoSlike/teziste.png"  class="w3-border w3-round  w3-paddingclass="w3-image" " alt="teziste"style="width:50%" > 
+ 
+	<p>Unesi koordinate tačke A(x1,y1)</p>
+	x1: <input  type="number" ng-model="x31"><br>
+	y1:    <input type="number" ng-model="y31"><br> 
+
+	<p>A(<span ng-bind="x31"></span>,<span ng-bind="y31"></span>)</p>
+
+	<p>Unesi koordinate tačke B(x2,y2)</p>
+	x2: <input  type="number" ng-model="x32"><br>
+	y2:    <input type="number" ng-model="y32"><br> 
+	
+	<p>B(<span ng-bind="x32"></span>,<span ng-bind="y32"></span>)</p>
+	
+	<p>Unesi koordinate tačke C( x3, y3 )</p>
+	x3: <input  type="number" ng-model="x33"><br>
+	y3:    <input type="number" ng-model="y33"><br> 
+	
+	<p>C(<span ng-bind="x33"></span>,<span ng-bind="y33"></span>)</p>
+		<footer class="w3-container w3-blue">
+		<h4>T((x1+x2+x3)/3,(y1+y2+y3)/3)= T( ( {{x31}} + {{x32f()}} + {{x33f()}} )/3 , ( {{y31}} + {{y32f()}} + {{y33f()}})/3 ) =
+		T ( {{(x31+x32+x33)/3}} , {{(y31+y32+y33)/3}} )</h4>
+		</footer>
+<br>
+	</div>
+ 
+	
+</div>
+
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('kontroler', function($scope) {
+
+    $scope.Math = Math;
+	
+	$scope.y33f = function() {
+	if ( $scope.y33 <0)
+        return "("+$scope.y33 + ") ";
+		else return $scope.y33 ;
+
+    };
+	
+  $scope.y32f = function() {
+	if ( $scope.y32 <0)
+        return "("+$scope.y32 + ") ";
+		else return $scope.y32 ;
+
+    };
+	
+	
+	$scope.x33f = function() {
+	if ( $scope.x33 <0)
+        return "("+$scope.x33 + ") ";
+		else return $scope.x33 ;
+
+    };
+	
+  $scope.x32f = function() {
+	if ( $scope.x32 <0)
+        return "("+$scope.x32 + ") ";
+		else return $scope.x32 ;
+
+    };
+    $scope.x1f = function() {
+	if ( $scope.x1 <0)
+        return "("+$scope.x1 + ") ";
+		else return $scope.x1 ;
+
+    };
+	 $scope.y1f = function() {
+	if ( $scope.y1 <0)
+        return "("+$scope.y1 + ") ";
+		else return $scope.y1 ;
+
+    };
+	$scope.x41f = function() {
+	if ( $scope.x41 <0)
+        return "("+$scope.x41 + ") ";
+		else return $scope.x41 ;
+
+    };
+	 $scope.y41f = function() {
+	if ( $scope.y41 <0)
+        return "("+$scope.y41 + ") ";
+		else return $scope.y41 ;
+
+    };
+});
+</script> 
+</div>
+</body>
+</html> 
